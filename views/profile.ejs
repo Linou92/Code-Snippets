@@ -1,0 +1,50 @@
+<% include partials/header %>
+
+        <main role="main">
+
+            <div class="jumbotron">
+              <div class="container">
+                  <div class="row">
+                      <div class="col">
+                        <div class="alert alert-success" role="alert">
+                          <center>You are now logged in !</center>
+                        </div>
+                      </div>
+                    </div>
+        
+                <h1 class="display-5"><center>Your snippets !</center></h1>
+              </div>
+            </div>
+      
+            <div class="container">
+            
+
+                <% snippets.forEach((snippet) => { %>
+                  <center><div class="snippet">
+                        <h2>Title - <%= snippet.title %>
+                          <h4><a href="/edit_snippet/<%= snippet._id %>">EDIT</a>
+                          <a href="/delete_snippet/<%= snippet._id %>">DELETE</a></h4>
+                        </h2>
+                        <h3>Languages - <%= snippet.language %></h3>
+                        <h4>Created by - <%= snippet.creator %></h4>
+                        <section class="snippet-code">
+                            <pre><%= snippet.body %></pre>
+                        </section>
+                      <% if(snippet.tags.length > 0 && snippet.tags[0] !== '') { %>
+                      <section class="snippet-tags">
+                        <p>
+                          <% snippet.tags.forEach((tag) => { %>
+                            <h4>Tags : <%= tag %></h4>
+                           <% }) %> 
+                          </p>
+                        </section>
+                        <% } %>
+                  </div></center>
+                <% }) %>
+              </div>
+                
+            </div>
+      
+          </main>
+          
+          <% include partials/footer %>

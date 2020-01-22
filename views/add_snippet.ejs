@@ -1,0 +1,51 @@
+  <% include partials/header %>
+    
+            <main role="main">
+    
+                <div class="jumbotron">
+                  <div class="container">
+                    <h1 class="display-5"><center>Create a snippet !</center></h1>
+                  </div>
+                </div>
+          
+                </div> 
+                <div class="container">
+                        <div class="form-container">
+                    
+                            <center><form class="add-snippet-form" action="/add_snippet" method="post">
+                            <div class="form-group">
+                              <label for="title">Title:</label>
+                              <input type="text" id="title" name="title" class="form-control">
+                            </div>
+                            <div class="form-group">
+                              <label for="body">Code Snippet:</label>
+                              <textarea id="body" name="body" rows="8" cols="80" class="form-control"></textarea>
+                            </div>
+                            <div class="form-group">
+                              <label for="language">Language:</label>
+                              <select name="language" class="form-control">
+                                <option value="C">C</option>
+                                <option value="C#">C#</option>
+                                <option value="C++">C++</option>
+                                <option value="CSS">CSS</option>
+                                <option value="HTML">HTML</option>
+                                <option value="Java">Java</option>
+                                <option value="Javascript">Javascript</option>
+                                <option value="Objective-C">Objective-C</option>
+                                <option value="Objective-C++">Objective-C++</option>
+                                <option value="PHP">PHP</option>
+                                <option value="Python">Python</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label for="tags">Tags: (separate by semicolon)</label>
+                              <input type="text" id="tags" name="tags" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-success">Add snippet</button>
+                          </form>
+                          <button class="btn btn-danger navbar-btn" onclick="window.location.href='/all_snippets'">Cancel</button>                  
+                        </div></center>
+          
+              </main>
+              
+              <% include partials/footer %>

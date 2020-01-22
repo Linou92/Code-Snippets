@@ -1,0 +1,60 @@
+<% include partials/header %>
+    
+            <main role="main">
+    
+                <div class="jumbotron">
+                  <div class="container">
+                    <h1 class="display-5"><center>Edit snippet !</center></h1>
+                  </div>
+                </div>
+          
+                </div> 
+                <div class="container">
+                                <div class="form-container">
+                                  <form class="update-snippet-form" action="/edit_snippet/<%= snippet._id %>" method="POST">
+                                    <div class="form-group">
+                                      <label for="title">Title:</label>
+                                      <input type="text" id="title" name="title" value=" <%= snippet.title %>" class="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="body">Code Snippet:</label>
+                                      <textarea id="body" name="body" rows="8" cols="80" class="form-control">
+                                        <%= snippet.body %>
+                                      </textarea>
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="language">Language:</label>
+                                      <select name="language" class="form-control" value="">
+                                        <% const langs = ["C", "C#", "C++", "CSS", "HTML", "Java", "Javascript", "Objective-C", "Objective-C++", "PHP", "Python"]
+                                          for (i in langs){
+                                            var sel=""
+                                            if(snippet.language == langs[i]){
+                                              sel = "selected"
+                                              
+                                            }
+                                            %>
+                                            <option value= "<%= langs[i] %>" <%= sel %> > <%= langs[i] %> </option>
+                                            <%
+                                          }
+                                          %>
+                                      </select>
+                                            </div>
+                                    <div class="form-group">
+                                      
+                                      <label for="tags">Tags: (separate by semicolon)</label>
+                                      <% if(snippet.tags.length > 0 && snippet.tags[0] !== '') { %>
+                                        <% snippet.tags.forEach((tag) => { %>
+                                      <input type="text" id="tags" name="tags" value="  <%= tag %>" class="form-control"/>
+                                      <% }) %>
+                                      <% } %>
+                                    </div>
+                                    <center><button class="btn btn-success" type="submit">Update Snippet</button></center>
+                                  </form>                 
+                                </div>
+                                <center><button class="btn btn-danger navbar-btn" onclick="window.location.href='/profile'">Cancel</button>
+                                </center>
+                      </div>
+              </main>
+              
+              <% include partials/footer %>
+    

@@ -1,0 +1,32 @@
+
+    <% include partials/header %>
+    
+    <main role="main">
+      
+
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-5"><center>Code Snippets !</center></h1>
+          <p><center>Welcome to Code Snippets ! Have fun reading, creating, editing and deleting snippets ! </center></p>
+        </div>
+		
+		<div class="container">
+            <h2><center>Login</center></h2>
+            <form action="/login" method="post">
+              <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
+              </div>
+              <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+              </div>
+              <center><button type="submit" class="btn btn-success" >Login</button>
+              Need an account? <a href="/register">Register here !</a></center>
+            </form>
+          </div>
+      </center></div> <!-- /container -->
+    </main>
+
+    <% include partials/footer %>
+    

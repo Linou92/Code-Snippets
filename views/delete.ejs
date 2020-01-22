@@ -1,0 +1,23 @@
+<% include partials/header %>
+    
+            <main role="main">
+    
+                <div class="jumbotron">
+                  <div class="container">
+                    <h1 class="display-5"><center>Delete snippet !</center></h1>
+                  </div>
+                </div>
+          
+                </div> 
+                        <center><div class="container" id="delete-page">
+                                <h1>Are you sure you want to delete your code snippet?</h1>
+                                <form action="/delete" method="POST">
+                                  <button class="btn btn-danger navbar-btn" type="submit">YES, DELETE</button>
+                                </form>
+                                <button class="btn btn-success" onclick="window.location.href='/all_snippets'">SORRY, NO</button>
+                              </div></center>
+                      
+              </main>
+              
+              <% include partials/footer %>
+    
